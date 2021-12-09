@@ -1,0 +1,31 @@
+.container{
+  width: 50%;
+  margin: 10px auto;
+
+}
+.todo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.todo-checkbox input{
+    padding: 40px
+}
+
+input[type="checkbox"]{
+  width: 20px; /*Desired width*/
+  height: 20px; /*Desired height*/
+}
+.title{
+  margin-left: 15px;
+}
+.edit{
+  color: blue;
+  cursor: pointer;
+}
+.delete{
+  color: red;
+  cursor: pointer;
+}
