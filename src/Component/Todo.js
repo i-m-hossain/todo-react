@@ -3,13 +3,17 @@ import './styles/todo.css'
 import { FiEdit } from 'react-icons/fi'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import TodoEdit from './TodoEdit';
+import { AiOutlineStar } from 'react-icons/ai'
 
-const Todo = ({ todo, handleDelete, toggleComplete, updateTodo }) => {
+const Todo = ({ todo, handleDelete, toggleComplete, updateTodo, handleFavourite }) => {
     const [editing, setEditing] = useState(false)
     const handleEdit = () => {
         setEditing(!editing)
     }
+    const handleSorting = (id) => {
+        handleFavourite(id)
 
+    }
     return (
         <div className="container">
             <div
@@ -40,6 +44,10 @@ const Todo = ({ todo, handleDelete, toggleComplete, updateTodo }) => {
                         style={{ marginLeft: '30px' }}
                         onClick={() => { handleDelete(todo.id) }}
                     ></RiDeleteBin6Line>
+                    <AiOutlineStar
+                        style={{ marginLeft: '30px' }}
+                        onClick={() => handleSorting(todo.id)}
+                    ></AiOutlineStar>
                 </div>
             </div>
             <div>

@@ -67,6 +67,13 @@ const Home = () => {
         })
         setTodos(updateTodo)
     }
+    const handleFavourite = (id) => {
+        const copyTodos = [...todos]
+        const todo = copyTodos.find(item => item.id === id)
+        const index = copyTodos.indexOf(todo)
+        copyTodos.unshift(copyTodos.splice(index, 1)[0]);
+        setTodos(copyTodos)
+    }
     return (
         <div>
             <h2>What needs to be done?</h2>
@@ -76,6 +83,7 @@ const Home = () => {
                 handleDelete={handleDelete}
                 toggleComplete={toggleComplete}
                 updateTodo={updateTodo}
+                handleFavourite={handleFavourite}
             ></ShowAddTodo>
         </div>
     );
