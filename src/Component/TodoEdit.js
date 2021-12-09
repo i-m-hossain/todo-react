@@ -8,6 +8,7 @@ const TodoEdit = ({ todo, setEditing, updateTodo }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         updateTodo(todoName, todo.id)
+        setEditing(false)
 
     }
     return (
@@ -21,9 +22,21 @@ const TodoEdit = ({ todo, setEditing, updateTodo }) => {
 
                 />
                 <div style={{ display: 'flex', }}>
+
                     <button
                         type="submit"
                         style={{
+
+                            borderRadius: "0",
+                            backgroundColor: "black"
+                        }}
+                    >
+                        Update
+                    </button>
+                    <button
+                        type="submit"
+                        style={{
+                            marginLeft: '10px',
                             border: "1px solid black",
                             borderRadius: "0",
                             backgroundColor: 'white',
@@ -33,15 +46,6 @@ const TodoEdit = ({ todo, setEditing, updateTodo }) => {
                     >
                         Cancel
                     </button>
-                    <button
-                        type="submit"
-                        style={{
-                            marginLeft: '10px',
-                            borderRadius: "0",
-                            backgroundColor: "black"
-                        }}
-                    >
-                        Update</button>
                 </div>
 
             </form>
