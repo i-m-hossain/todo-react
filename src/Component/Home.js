@@ -13,7 +13,7 @@ const Home = () => {
         const newTodo = {
             id: Math.floor(Math.random() * 10000),
             name: name,
-            isCompleted: true
+            isCompleted: false
         }
         setTodos([...todos, newTodo])
     }
@@ -48,12 +48,26 @@ const Home = () => {
 
     }
 
+    const toggleComplete = (id) => {
+        console.log(id);
+        const updatedTodo = todos.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, isCompleted: !todo.isCompleted }
+            }
+            return todo;
+        })
+        setTodos(updatedTodo)
 
+    }
     return (
         <div>
             <h2>What needs to be done?</h2>
             <AddTodo addTask={addTask}></AddTodo>
-            <ShowAddTodo todos={todos} handleDelete={handleDelete}></ShowAddTodo>
+            <ShowAddTodo
+                todos={todos}
+                handleDelete={handleDelete}
+                toggleComplete={toggleComplete}
+            ></ShowAddTodo>
         </div>
     );
 };

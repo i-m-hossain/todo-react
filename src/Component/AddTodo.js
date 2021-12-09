@@ -21,7 +21,6 @@ const AddTodo = ({ addTask }) => {
                 <input
                     type="text"
                     placeholder="Add to do"
-
                     onChange={handleOnChange}
                     value={name}
                 />
