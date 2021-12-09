@@ -49,7 +49,6 @@ const Home = () => {
     }
 
     const toggleComplete = (id) => {
-        console.log(id);
         const updatedTodo = todos.map(todo => {
             if (todo.id === id) {
                 return { ...todo, isCompleted: !todo.isCompleted }
@@ -59,6 +58,15 @@ const Home = () => {
         setTodos(updatedTodo)
 
     }
+    const updateTodo = (name, id) => {
+        const updateTodo = todos.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, name: name }
+            }
+            return todo;
+        })
+        setTodos(updateTodo)
+    }
     return (
         <div>
             <h2>What needs to be done?</h2>
@@ -67,6 +75,7 @@ const Home = () => {
                 todos={todos}
                 handleDelete={handleDelete}
                 toggleComplete={toggleComplete}
+                updateTodo={updateTodo}
             ></ShowAddTodo>
         </div>
     );

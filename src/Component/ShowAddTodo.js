@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
 
-const ShowAddTodo = ({ todos, handleDelete, toggleComplete }) => {
+const ShowAddTodo = ({ todos, handleDelete, toggleComplete, updateTodo }) => {
 
     return (
         <div>
@@ -11,6 +11,7 @@ const ShowAddTodo = ({ todos, handleDelete, toggleComplete }) => {
                     todo={todo}
                     handleDelete={handleDelete}
                     toggleComplete={toggleComplete}
+                    updateTodo={updateTodo}
                 ></Todo>)
             }
         </div>
